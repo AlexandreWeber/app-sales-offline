@@ -1,0 +1,36 @@
+<app-header-back title="Novo Pedido" link="home"></app-header-back>
+
+<ion-content>
+  <br/>
+  <ion-card>
+    <ion-item>
+      <ion-icon color="primary" name="search"></ion-icon>
+      <ion-input class="padding-left: 2px;" debounce="1000" placeholder="Busque o cliente" type="text" [(ngModel)]="termToSearch" (ionChange)="search()"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="customers.length > 0">
+      <ion-list>
+        <div *ngFor="let customer of customers">
+          <ion-item>
+              <ion-label>{{customer.name}}</ion-label>
+          </ion-item>
+        </div>
+      </ion-list>
+  </ion-card>
+
+  <div *ngIf="customers.length === 0">
+      <ion-img src="../assets/imgs/customer.png"></ion-img>
+
+      <ion-item lines="none">
+        <ion-grid>
+          <ion-row class="center">
+            <ion-label color="secondary" class="font-22">Busque por um cliente</ion-label>
+          </ion-row>
+          <ion-row class="center">
+            <ion-label color="secondary" text-wrap>através do nome, razão social, localização e CNPJ.</ion-label>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+  </div>
+</ion-content>
