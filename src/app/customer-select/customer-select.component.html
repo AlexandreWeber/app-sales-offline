@@ -1,19 +1,28 @@
-<app-header-back title="Novo Pedido" link="home"></app-header-back>
-
+<app-header-back title="Novo Pedido" backLink="home">
+</app-header-back>
 <ion-content>
-  <br/>
   <ion-card>
     <ion-item>
       <ion-icon color="primary" name="search"></ion-icon>
-      <ion-input class="padding-left: 2px;" debounce="1000" placeholder="Busque o cliente" type="text" [(ngModel)]="termToSearch" (ionChange)="search()"></ion-input>
+      <ion-input class="padding-left: 2px;" debounce="500" placeholder="Busque o cliente" type="text" [(ngModel)]="termToSearch" (ionChange)="search()"></ion-input>
     </ion-item>
   </ion-card>
 
   <ion-card *ngIf="customers.length > 0">
       <ion-list>
         <div *ngFor="let customer of customers">
-          <ion-item>
-              <ion-label>{{customer.name}}</ion-label>
+          <ion-item (click)="newSale(customer.code)">
+            <ion-grid>
+              <ion-row>
+                <ion-label>{{customer.code}}</ion-label>
+              </ion-row>
+              <ion-row>
+                <ion-label>{{customer.name}}</ion-label>
+              </ion-row>
+              <ion-row>
+                <ion-label>{{customer.cgc}}</ion-label>
+              </ion-row>
+            </ion-grid>
           </ion-item>
         </div>
       </ion-list>

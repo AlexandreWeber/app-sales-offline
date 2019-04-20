@@ -12,9 +12,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CustomerSelectComponent } from './customer-select/customer-select.component';
 import { HeaderBackComponent } from './components/header-back/header-back.component';
 import { FormsModule } from '@angular/forms';
+import { SalesHeaderComponent } from './sales-header/sales-header.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, CustomerSelectComponent, HeaderBackComponent],
+  declarations: [
+    AppComponent, 
+    FooterComponent, 
+    CustomerSelectComponent, 
+    HeaderBackComponent, 
+    SalesHeaderComponent
+  ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [

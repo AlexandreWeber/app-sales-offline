@@ -9,14 +9,14 @@ import { NavController } from '@ionic/angular';
 export class HeaderBackComponent implements OnInit {
 
   @Input() title: string;
-  @Input() link: string;
+  @Input() backLink: string;
 
   constructor(private navCtrl: NavController) { }
 
   ngOnInit() {}
 
   navigateTo () {
-    this.navCtrl.navigateBack(this.link);
+    this.navCtrl.navigateBack(this.backLink);
   }
 
 }
